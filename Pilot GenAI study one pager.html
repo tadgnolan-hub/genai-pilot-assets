@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GenAI as a Communication Bridge — 4‑Week Pilot Study</title>
+  <meta name="description" content="Pilot testing whether Generative AI can bridge communication gaps for neurodiverse workers. Collaborators welcome." />
+  <style>
+    :root {
+      --primary: #6366F1;
+      --ink: #111827;
+      --muted: #4B5563;
+      --bg: #FFFFFF;
+      --panel: #F8FAFC;
+      --border: #E5E7EB;
+      --participants: #E0F2FE;
+      --participants-b: #0284C7;
+      --assessment: #F3E8FF;
+      --assessment-b: #7C3AED;
+      --intervention: #D1FAE5;
+      --intervention-b: #059669;
+      --analysis: #FEF3C7;
+      --analysis-b: #D97706;
+      --shadow: 0 8px 28px rgba(2,6,23,.08);
+      --radius: 14px;
+      --maxw: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color: var(--ink); background: var(--bg); line-height: 1.6; margin:0; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+    .hero { text-align:center; padding: 36px 20px; }
+    .title { font-size: clamp(28px,4vw,44px); color: var(--primary); margin: 8px 0; }
+    .lede { font-size: clamp(16px,2vw,18px); color: var(--muted); max-width: 70ch; margin: 0 auto; }
+    .btn { display:inline-block; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:600; margin: 12px; }
+    .btn.primary { background:var(--primary); color:#fff; box-shadow: var(--shadow); }
+    .btn.ghost { border:1px solid var(--primary); color:var(--primary); }
+    .timeline { background:linear-gradient(135deg,#F8FAFC,#E2E8F0); border-radius:var(--radius); padding:14px 18px; text-align:center; }
+    .timeline-items { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+    .chip { background:#fff; border:1px dashed var(--primary); padding:10px 12px; border-radius:12px; min-width:160px; }
+    .flow { display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:24px; }
+    .flow .box { padding:16px 22px; border:2px solid; border-radius:12px; text-align:center; width:min(680px,100%); background:#fff; }
+    .participants { background:var(--participants); border-color:var(--participants-b); }
+    .assessment { background:var(--assessment); border-color:var(--assessment-b); }
+    .intervention { background:var(--intervention); border-color:var(--intervention-b); }
+    .analysis { background:var(--analysis); border-color:var(--analysis-b); }
+    .arrow { color:var(--primary); font-size:20px; }
+    details { border:1px solid var(--border); border-radius:12px; padding:12px 14px; background:#fff; margin-top:16px; }
+    details summary { cursor:pointer; font-weight:600; }
+    footer { background:linear-gradient(135deg,#F8FAFC,#E2E8F0); border-radius:16px; padding:28px; margin-top:52px; text-align:center; }
+    .qr { width:120px; height:120px; border:2px dashed var(--primary); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:12px; background:#fff; margin:0 auto; }
+    img.diagram { max-width:100%; border:1px solid var(--border); border-radius:8px; margin-top:12px; }
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <h1 class="title">Generative AI as a Communication Bridge</h1>
+    <p class="lede">A 4‑week pilot testing whether guided GenAI tools can reduce workplace communication barriers for early‑career neurodiverse workers — building evidence for future inclusion tools. <strong>We’re actively seeking collaborators.</strong></p>
+    <a class="btn primary" href="#collab">Partner With Us</a>
+    <a class="btn ghost" href="https://osf.io/enkyv/" target="_blank">View OSF Project</a>
+    <p style="margin-top:12px;font-size:14px;color:var(--muted);">Scoping (Sep–Dec 2025) • Pilot (Jan–May 2026) • Analysis & Write‑up (Feb–Nov 2026)</p>
+  </header>
+
+<!-- Vision Statement at Top -->
+<div role="note" aria-label="Vision statement" style="margin:20px auto; padding:14px; border:2px solid var(--primary); border-radius:12px; background:#EEF2FF; max-width:800px;">
+  <strong>Vision:</strong> We want every neurodivergent person to be able to say what they mean, when they want to say it, and be understood. We think GenAI can lighten the mental load of workplaces so people can focus on their strengths and choices, not just coping. This pilot explores how to make that possible.
+</div>
+
+
+  <section class="wrap timeline" aria-label="4-Week Pilot Study Timeline">
+  <h2>4‑Week Pilot Study Timeline</h2>
+  <style>
+    .tablist { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+    .tablist [role="tab"] { padding:10px 14px; border-radius:12px; border:2px dashed #6366F1; background:#fff; color:#111827; cursor:pointer; }
+    .tablist [role="tab"][aria-selected="true"] { border-style: solid; background:#EEF2FF; }
+    .tabpanel { border:1px solid var(--border); background:#fff; border-radius:12px; padding:14px; margin-top:12px; max-width:900px; margin-left:auto; margin-right:auto; }
+  </style>
+
+  <div class="tablist" role="tablist" aria-label="Pilot timeline tabs">
+    <button role="tab" id="tab-w0" aria-selected="true" aria-controls="panel-w0"><strong>Week 0:</strong> Baseline + Intervention</button>
+    <button role="tab" id="tab-w2" aria-selected="false" aria-controls="panel-w2"><strong>Week 2:</strong> T1 Midway self‑report</button>
+    <button role="tab" id="tab-w4" aria-selected="false" aria-controls="panel-w4"><strong>Week 4:</strong> T2 Final self‑report</button>
+    <button role="tab" id="tab-t3" aria-selected="false" aria-controls="panel-t3"><strong>Follow‑up:</strong> T3 Qualitative interviews</button>
+  </div>
+
+  <div id="panel-w0" class="tabpanel" role="tabpanel" aria-labelledby="tab-w0">
+    <ul>
+      <li><strong>Participants (n≈20):</strong> Early‑career ND workers; limited prior GenAI use; experiencing workplace communication challenges</li>
+      <li><strong>Measures:</strong> NGSE · WHO‑5 · TAM · DEP‑Workplace Communication Scale (≈10–15 min survey)</li>
+      <li><strong>Interventions:</strong> Control — 10‑min professional writing video + practice; Treatment — 10‑min GenAI tutorial (Goblin Tools) + practice</li>
+    </ul>
+  </div>
+  <div id="panel-w2" class="tabpanel" role="tabpanel" aria-labelledby="tab-w2" hidden>
+    <p>Midway check‑in with the same measures (≈10–15 min survey) to track early changes in technology adoption, self‑efficacy, wellbeing, and communication fit.</p>
+  </div>
+  <div id="panel-w4" class="tabpanel" role="tabpanel" aria-labelledby="tab-w4" hidden>
+    <p>Final self‑report using the same measures (≈10–15 min survey) to assess sustained tool use and overall impact.</p>
+  </div>
+  <div id="panel-t3" class="tabpanel" role="tabpanel" aria-labelledby="tab-t3" hidden>
+    <p>Purposive sample invited for a semi‑structured interview (≈30 minutes) to understand what worked, what didn’t, and real‑world impact.</p>
+  </div>
+
+  <script>
+    (function(){
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = {
+        'tab-w0': document.getElementById('panel-w0'),
+        'tab-w2': document.getElementById('panel-w2'),
+        'tab-w4': document.getElementById('panel-w4'),
+        'tab-t3': document.getElementById('panel-t3')
+      };
+      function activate(tab){
+        tabs.forEach(t=>{ t.setAttribute('aria-selected','false'); t.setAttribute('tabindex','-1'); });
+        Object.values(panels).forEach(p=> p.hidden = true);
+        tab.setAttribute('aria-selected','true');
+        tab.removeAttribute('tabindex');
+        panels[tab.id].hidden = false;
+        panels[tab.id].focus && panels[tab.id].focus();
+      }
+      tabs.forEach(t=>{
+        t.addEventListener('click', ()=> activate(t));
+        t.addEventListener('keydown', (e)=>{
+          const keys = ['ArrowLeft','ArrowRight','Home','End'];
+          if(!keys.includes(e.key)) return;
+          e.preventDefault();
+          const arr = Array.from(tabs);
+          let idx = arr.indexOf(document.activeElement);
+          if(e.key==='ArrowRight') idx = (idx+1)%arr.length;
+          if(e.key==='ArrowLeft') idx = (idx-1+arr.length)%arr.length;
+          if(e.key==='Home') idx = 0;
+          if(e.key==='End') idx = arr.length-1;
+          arr[idx].focus(); activate(arr[idx]);
+        });
+      });
+    })();
+  </script>
+</section>
+
+  <script>
+    (function(){
+      const tabs = document.querySelectorAll('[role="tab"]');
+      const panels = {
+        'tab-w0': document.getElementById('panel-w0'),
+        'tab-w2': document.getElementById('panel-w2'),
+        'tab-w4': document.getElementById('panel-w4'),
+        'tab-t3': document.getElementById('panel-t3')
+      };
+      function activate(tab){
+        tabs.forEach(t=>{ t.setAttribute('aria-selected','false'); t.setAttribute('tabindex','-1'); });
+        Object.values(panels).forEach(p=> p.hidden = true);
+        tab.setAttribute('aria-selected','true');
+        tab.removeAttribute('tabindex');
+        panels[tab.id].hidden = false;
+        panels[tab.id].focus && panels[tab.id].focus();
+      }
+      tabs.forEach(t=>{
+        t.addEventListener('click', ()=> activate(t));
+        t.addEventListener('keydown', (e)=>{
+          const keys = ['ArrowLeft','ArrowRight','Home','End'];
+          if(!keys.includes(e.key)) return;
+          e.preventDefault();
+          const arr = Array.from(tabs);
+          let idx = arr.indexOf(document.activeElement);
+          if(e.key==='ArrowRight') idx = (idx+1)%arr.length;
+          if(e.key==='ArrowLeft') idx = (idx-1+arr.length)%arr.length;
+          if(e.key==='Home') idx = 0;
+          if(e.key==='End') idx = arr.length-1;
+          arr[idx].focus(); activate(arr[idx]);
+        });
+      });
+    })();
+  </script>
+</section>
+
+  <main class="wrap">
+    
+
+    <section class="wrap" aria-label="About DEP and GenAI" style="margin-top:20px;">
+ 
+
+<figure>
+  <img src="https://raw.githubusercontent.com/tadgnolan-hub/genai-pilot-assets/main/flowchart.png"
+       alt="Flowchart of the 4-week pilot study: Participants → T0 baseline → randomisation → T1 → T2 → purposive sampling → T3 interview"
+       class="diagram">
+  <figcaption style="font-size:12px;color:#4B5563;margin-top:6px;">
+    Study flow from recruitment to follow-up.
+  </figcaption>
+  <p>
+    <a href="https://raw.githubusercontent.com/tadgnolan-hub/genai-pilot-assets/main/flowchart.png"
+       target="_blank" rel="noopener"
+       aria-label="Open full-size flowchart (new tab)">
+      🔍 View full-size flowchart
+    </a>
+  </p>
+</figure>
+
+
+
+  <h3>About the Double Empathy Problem (DEP)</h3>
+  <p>The <a href="https://reframingautism.org.au/miltons-double-empathy-problem-a-summary-for-non-academics/" target="_blank">Double Empathy Problem</a> describes the mutual communication gap between neurotypical and neurodivergent people. It frames miscommunication as a two-way challenge rather than a deficit in the ND person. Our bespoke DEP-WCS captures how workplace messages feel and fit from both sides.</p>
+
+  <h3>About Generative AI (GenAI)</h3>
+  <p>Generative AI refers to large language models and related tools capable of producing natural-language text, task breakdowns, tone-shifting, and summarisation. In this pilot, we focus on <a href="https://goblin.tools/" target="_blank">Goblin Tools</a>, 'designed to help neurodivergent people with tasks they find overwhelming or difficult.' (reading tone, informal language, assumed communication styles).</p>
+
+<h3>GenAI to solve DEP</h3>
+  <p>We theorise that by using GenAI effectively, ND workers can be heard the way they want, when they want. We think GenAI can reduce the cognitive overload of modern workplaces so that ND people can focus on what matters to them. We hope to empower marginalised people to participate more fully, to have more choices and to express themselves.</p>
+</section>
+
+
+
+<details open>
+  <summary>Measures & Hypotheses</summary>
+  <p><strong>Measures:</strong> NGSE (general self-efficacy), WHO-5 (wellbeing), TAM (technology acceptance), DEP-WCS (Double Empathy Problem – Workplace Communication Scale, bespoke).</p>
+  <p><strong>Hypotheses:</strong> The treatment group will show higher TAM, NGSE, WHO-5 scores and lower DEP-WCS miscommunication vs control.</p>
+  <p><strong>Analysis plan:</strong> Repeated-measures ANOVA comparing control vs treatment across T0, T1, T2 on all scales; effect sizes reported; interviews analysed thematically.</p>
+</details>
+
+    <details>
+  <summary>Research Context & Evidence</summary>
+  <p>Generative AI is emerging as an inclusion enabler. EY’s mixed‑methods study of 300+ employees living with disability or neurodivergence found 85% felt more included, 76% thrived more at work, and 91% saw GenAI as assistive tech (<a href="https://www.ey.com/content/dam/ey-unified-site/ey-com/en-uk/services/ai/documents/ey-gen-ai-for-accessibility-more-human-not-less.pdf" target="_blank">read the report</a>). We’re applying this evidence to a structured pilot with ND early‑career workers.</p>
+</details>
+
+
+
+<details>
+  <summary>Why Now & The Future of Work</summary>
+  <p><strong>Why Now:</strong> GenAI adoption is happening at unprecedented speed. If ND voices aren’t embedded in design and rollout now, the next generation of workplace tools will entrench old barriers instead of dismantling them. This pilot gives ND workers a seat at the table at exactly the right moment.</p>
+  <p><strong>Future of Work:</strong> Generative AI makes reproducing old content fast and nearly free. The strategic edge shifts to people who create new content, perspectives, and insights. Historically unheard voices — neurodivergent, marginalised, unconventional — become the marginal advantage. This pilot explores how to unlock that advantage.</p>
+</details>
+
+    <details>
+  <summary>Ethics & Data</summary>
+  <ul>
+    <li>We will ask participants for consent in plain English and participants will always have the right to withdraw</li>
+    <li>Survey data will be de-identified and secure</li>
+    <li>Interview audio transcribed then deleted</li>
+    <li>We are committed to providing accessible plain English versions of all findings</li>
+  </ul>
+  <p><strong>Ethics status:</strong> approval link/ID pending · <a href="https://osf.io/enkyv/" target="_blank" rel="noopener">OSF prereg</a></p>
+</details>
+
+<details>
+  <summary>Future Directions</summary>
+  <p>While our pilot focuses on ND workers, postive results here could indicate that the benefits of GenAI-as-translator for other groups who experience chronic misinterpretation at work (e.g., culturally and racially marginalised women, low‑SES workers). If Double Empathy Problem applies to multiple marginalised groups, then the implications of this study increase exponentially. We hope to test generalisability once we establish feasibility.</p>
+</details>
+
+    <section id="collab" style="margin-top:28px; text-align:center;">
+      <h2>We’re Inviting Collaborators</h2>
+      <p style="max-width:60ch; margin:0 auto 16px;">We’re looking for HR teams, ND advocacy groups, academics, and lived‑experience advisors to help shape this pilot. If this sparks your interest, let’s talk.</p>
+      <a class="btn primary" href="mailto:s225601572@deakin.edu.au?subject=GenAI%20Pilot%20Collaboration">Email Tad</a>
+      <a class="btn ghost" href="https://osf.io/enkyv/" target="_blank">View OSF Project</a>
+      <div class="qr" role="img" aria-label="QR code to signup link">QR — add link</div>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Contact:</strong> s225601572@deakin.edu.au · Researcher: Tad Nolan · Deakin University</p>
+    <p style="font-size:12px; color:var(--muted);">© 2025 Draft for collaboration. Accessible HTML, mobile‑friendly, alt text for all images, designed to meet WCAG contrast and keyboard navigation.</p>
+  </footer>
+</body>
+</html>
