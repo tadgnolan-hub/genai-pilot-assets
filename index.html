@@ -257,6 +257,18 @@
       <div class="qr" role="img" aria-label="QR code to signup form">
   <a href="https://forms.gle/YourShortFormID" target="_blank" rel="noopener">
     <img src="qr-code.png" alt="QR code linking to the signup form for GenAI pilot study">
+    .qr {
+  display: inline-block; /* so it sits nicely in the section */
+  margin-top: 16px;
+}
+
+.qr img {
+  width: 120px;   /* or whatever size you prefer */
+  height: 120px;  /* maintain square shape */
+  object-fit: contain;
+  border-radius: 8px;
+  border: 2px dashed var(--ink); /* optional for style */
+}
   </a>
 </div>
 
