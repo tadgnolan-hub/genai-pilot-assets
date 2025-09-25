@@ -6,24 +6,30 @@
   <title>GenAI as a Communication Bridge — 4‑Week Pilot Study</title>
   <meta name="description" content="Pilot testing whether Generative AI can bridge communication gaps for neurodiverse workers. Collaborators welcome." />
   <style>
-    :root {
-      --primary: #6366F1;
-      --ink: #111827;
-      --muted: #4B5563;
-      --bg: #FFFFFF;
-      --panel: #F8FAFC;
-      --border: #E5E7EB;
-      --participants: #E0F2FE;
-      --participants-b: #0284C7;
-      --assessment: #F3E8FF;
-      --assessment-b: #7C3AED;
-      --intervention: #D1FAE5;
-      --intervention-b: #059669;
-      --analysis: #FEF3C7;
-      --analysis-b: #D97706;
-      --shadow: 0 8px 28px rgba(2,6,23,.08);
-      --radius: 14px;
-      --maxw: 1100px;
+:root {
+  /* Darker brand for AA contrast */
+  --primary: #4338CA;   /* was #6366F1 */
+
+  /* Text */
+  --ink: #111827;
+  --muted: #374151;     /* was #4B5563 (slightly darker for better contrast) */
+
+  /* Surfaces */
+  --bg: #FFFFFF;
+  --panel: #F8FAFC;
+  --border: #E5E7EB;
+
+  /* Functional colors (unchanged) */
+  --participants: #E0F2FE;   --participants-b: #0284C7;
+  --assessment:   #F3E8FF;   --assessment-b:   #7C3AED;
+  --intervention: #D1FAE5;   --intervention-b: #059669;
+  --analysis:     #FEF3C7;   --analysis-b:     #D97706;
+
+  --shadow: 0 8px 28px rgba(2,6,23,.08);
+  --radius: 14px;
+  --maxw: 1100px;
+}
+
     }
     * { box-sizing: border-box; }
     body { font-family: ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color: var(--ink); background: var(--bg); line-height: 1.6; margin:0; }
